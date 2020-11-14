@@ -17,3 +17,8 @@ declare(strict_types=1);
 namespace WP_POST_READING_PROGRESS;
 
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Get the Admin settings page.
+ */
+require_once 'admin/options.php';
