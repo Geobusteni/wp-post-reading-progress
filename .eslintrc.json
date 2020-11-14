@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+  "rules": {
+    "valid-jsdoc": "off",
+    "@wordpress/no-unused-vars-before-return": "off",
+    "array-callback-return": "off"
+  }
+}
