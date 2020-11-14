@@ -3,7 +3,7 @@
 *.sql
 *.sqlite
 /package-lock.json
-/composer.loc
+/composer.lock
 
 # Directories
 .idea
