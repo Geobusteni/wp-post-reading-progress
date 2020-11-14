@@ -1,0 +1,38 @@
+{
+  "name": "wp-post-reading-progress",
+  "version": "0.0.1",
+  "description": "A plugin that show the reading progress on a WordPress page or post.",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geobusteni/wp-post-reading-progress.git"
+  },
+  "author": "Alexandru Negoita",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Geobusteni/wp-post-reading-progress/issues"
+  },
+  "homepage": "https://github.com/Geobusteni/wp-post-reading-progress#readme",
+  "dependencies": {
+    "@teft/scripts": "^0.0.4",
+    "consolidated-events": "^2.0.2"
+  },
+  "devDependencies": {
+    "@wordpress/i18n": "^3.14.0",
+    "eslint": "^5",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "scripts": {
+    "build": "teft-scripts build",
+    "lint": "npm run lint-css && npm run lint-js",
+    "lint-js": "teft-scripts lint-js .",
+    "lint-js:fix": "npm run lint-js -- --fix",
+    "lint-css": "teft-scripts lint-style '**/*.css'",
+    "lint-css:fix": "npm run lint-css -- --fix",
+    "start": "teft-scripts start",
+    "watch": "teft-scripts watch"
+  }
+}
