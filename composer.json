@@ -11,14 +11,11 @@
     }
   ],
   "require": {
-    "angrycreative/composer-plugin-language-update": "*"
   },
   "require-dev": {
     "dekode/coding-standards": ">=3.0.0"
   },
   "extra" : {
-    "wordpress-languages": [ "nb_NO","sv_SE", "en_GB", "da_DK", "ro_RO" ],
-    "wordpress-path-to-content-dir": "/languages"
   },
   "scripts": {
     "lint": [
