@@ -1,3 +1,63 @@
-.wp-post-progress {
-	font-size: inherit;
+.kst-wp-reading-progress-bar-container {
+	position: relative;
+}
+
+.kst.wp-reading-progress-bar {
+	border: 1px solid #cccccc;
+	text-align: center;
+
+	&:not( .nolocation ) {
+		position: absolute;
+	}
+
+	& label {
+		align-items: center;
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 10px auto;
+		padding: 10px;
+
+		& span {
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-align: center;
+			width: 100%;
+		}
+
+		& div {
+			font-size: 1.1em;
+			font-weight: bold;
+			margin-left: 15px;
+		}
+	}
+
+	& progress {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		border: none;
+	}
+
+	& .reading-time {
+		font-size: 0.8em;
+		font-weight: bold;
+
+		& span {
+			display: block;
+			font-weight: normal;
+		}
+	}
+
+	&.fixed {
+		position: fixed;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto !important;
+
+		& .reading-time {
+			display: none;
+		}
+	}
 }
