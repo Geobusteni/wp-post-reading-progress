@@ -196,3 +196,5 @@ function maybe_show_content_wp_reading_progress( string $content ) : string {
 
 	return $content;
 }
+
+// @todo: uninstall hook -> delete the option from DB.
