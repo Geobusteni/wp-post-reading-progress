@@ -17,12 +17,14 @@ declare(strict_types=1);
 namespace WP_POST_READING_PROGRESS;
 
 use function WP_POST_READING_PROGRESS\HELPERS\get_wp_reading_progress_options;
+use function WP_POST_READING_PROGRESS\HELPERS\progress_bar_is_allowed;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Get the Admin settings page.
  */
+require_once 'helpers.php';
 require_once 'admin/options.php';
 
 /**
@@ -125,7 +127,6 @@ require_once 'helpers.php';
  * Enqueue the scripts and styles for the front-end.
  */
 function enque_front_scripts() {
-	$plugin_usage = get_wp_reading_progress_options()['post_type'];
 
 	wp_register_style(
 		'wp-post-reading-progress',
@@ -142,7 +143,7 @@ function enque_front_scripts() {
 		true
 	);
 
-	if ( ( is_single() && 'post' === $plugin_usage ) || ( is_page() && 'page' === $plugin_usage ) || ( ( is_single() || is_page() ) && 'wp_core_all' === $plugin_usage ) ) {
+	if ( progress_bar_is_allowed() ) {
 		wp_enqueue_style( 'wp-post-reading-progress' );
 		wp_enqueue_script( 'wp-post-reading-progress' );
 	}
@@ -190,7 +191,7 @@ function maybe_show_content_wp_reading_progress( string $content ) : string {
 	$options   = get_wp_reading_progress_options();
 	$post_type = get_post_type( get_the_ID() );
 
-	if ( in_array( $options['post_type'], [ 'wp_core_all', $post_type ], true ) ) {
+	if ( in_array( $options['post_type'], [ 'wp_core_all', $post_type ], true ) && progress_bar_is_allowed() ) {
 		return get_progress_bar() . $content;
 	}
 

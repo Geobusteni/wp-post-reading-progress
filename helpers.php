@@ -70,3 +70,17 @@ function seconds_to_minutes( int $time, string $format = '%02d:%02d' ) : ?string
 
 	return sprintf( $format, $minutes, $minutes );
 }
+
+/**
+ * Checks if plugin is allowed on page or not.
+ *
+ * @return bool
+ */
+function progress_bar_is_allowed() : bool {
+	$plugin_usage = get_wp_reading_progress_options()['post_type'];
+
+	if ( ( is_single() && 'post' === $plugin_usage ) || ( is_page() && 'page' === $plugin_usage ) || ( ( is_single() || is_page() ) && 'wp_core_all' === $plugin_usage ) ) {
+		return true;
+	}
+	return false;
+}
