@@ -16,6 +16,7 @@ declare(strict_types=1);
 
 namespace WP_POST_READING_PROGRESS;
 
+use function WP_POST_READING_PROGRESS\HELPERS\enable_progress_bar_html;
 use function WP_POST_READING_PROGRESS\HELPERS\get_wp_reading_progress_options;
 use function WP_POST_READING_PROGRESS\HELPERS\progress_bar_is_allowed;
 
@@ -145,7 +146,9 @@ function enque_front_scripts() {
 
 	if ( progress_bar_is_allowed() ) {
 		wp_enqueue_style( 'wp-post-reading-progress' );
-		wp_enqueue_script( 'wp-post-reading-progress' );
+		if ( enable_progress_bar_html() ) {
+			wp_enqueue_script( 'wp-post-reading-progress' );
+		}
 	}
 }
 

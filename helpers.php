@@ -84,3 +84,15 @@ function progress_bar_is_allowed() : bool {
 	}
 	return false;
 }
+
+/**
+ * Helpre function to chekc wether the showing only time for reading option is set.
+ * Used in wp-post-reading-progress.php, enque_front_scripts():148.
+ *
+ * @return bool
+ */
+function enable_progress_bar_html() : bool {
+	$show_reading_time_only = get_wp_reading_progress_options()['time_to_read_only'];
+
+	return ( isset( $show_reading_time_only ) && 'yes' === $show_reading_time_only ) ? false : true;
+}

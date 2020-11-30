@@ -80,7 +80,7 @@ function initiate_settings() {
 		[
 			'type'        => 'select',
 			'id'          => 'post_type',
-			'description' => esc_html__( 'The type of post type were the reading progress bar will be visible.', 'wp-post-reading-progress' ),
+			'description' => esc_html__( 'The type of post type were the reading progress bar will be visible. Not choosing an option equals to not showing the content this plugin creates.', 'wp-post-reading-progress' ),
 			'options'     => [
 				'post'        => esc_html__( 'For posts only', 'wp-post-reading-progress' ),
 				'page'        => esc_html__( 'For pages only', 'wp-post-reading-progress' ),
@@ -98,13 +98,28 @@ function initiate_settings() {
 		[
 			'type'        => 'select',
 			'id'          => 'location',
-			'description' => esc_html__( 'The location of the reading progress bar, in the page.', 'wp-post-reading-progress' ),
+			'description' => esc_html__( 'The location of the reading progress bar, in the page.
+			Not choosing an option will make the plugin to show on top of the content of the page or post.
+			It will also float the progress bar in the right of the content.', 'wp-post-reading-progress' ),
 			'options'     => [
 				'top'    => esc_html__( 'Top', 'wp-post-reading-progress' ),
 				'right'  => esc_html__( 'Right', 'wp-post-reading-progress' ),
 				'bottom' => esc_html__( 'Bottom', 'wp-post-reading-progress' ),
 				'left'   => esc_html__( 'Left', 'wp-post-reading-progress' ),
 			],
+		]
+	);
+
+	add_settings_field(
+		'time_to_read_only',
+		esc_html__( 'Show only the time to read', 'wp-post-reading-progress' ),
+		__NAMESPACE__ . '\\create_field',
+		'wp_post_reading_progress',
+		'wp-post-reading-progress-section',
+		[
+			'id'          => 'time_to_read_only',
+			'description' => esc_html__( 'Show the calculated total time to read and hide the progress bar. This also hides the floating box, while srcolling the post content.', 'wp-post-reading-progress' ),
+			'type'        => 'checkbox',
 		]
 	);
 
@@ -163,6 +178,34 @@ function initiate_settings() {
 		[
 			'id'          => 'bar_color',
 			'description' => esc_html__( 'The progress bar color for the remaining space.', 'wp-post-reading-progress' ),
+			'default'     => '#ffffff',
+			'type'        => 'color',
+		]
+	);
+
+	add_settings_field(
+		'box_color',
+		esc_html__( 'Color for the progress box background.', 'wp-post-reading-progress' ),
+		__NAMESPACE__ . '\\create_field',
+		'wp_post_reading_progress',
+		'wp-post-reading-progress-section',
+		[
+			'id'          => 'box_color',
+			'description' => esc_html__( 'The progress bar color for the remaining space.', 'wp-post-reading-progress' ),
+			'default'     => '#000000',
+			'type'        => 'color',
+		]
+	);
+
+	add_settings_field(
+		'box_text_color',
+		esc_html__( 'Color for the progress box background.', 'wp-post-reading-progress' ),
+		__NAMESPACE__ . '\\create_field',
+		'wp_post_reading_progress',
+		'wp-post-reading-progress-section',
+		[
+			'id'          => 'box_text_color',
+			'description' => esc_html__( 'The progress bar color for the text in it.', 'wp-post-reading-progress' ),
 			'default'     => '#ffffff',
 			'type'        => 'color',
 		]
