@@ -17,6 +17,8 @@ The default location is static, before the content and then floated, once the sc
 
 You can also choose if you want to show the total reading time, only the progress, or both and if you want to show it on posts only, pages only, or on both of them.
 
+Optionally, the settings can be removed from the database, once the plugin uninstalls.
+
 Please use the issues for ideas about enhancing or for bugs.
 
 Please keep in mind that the support is pretty limited at this point, since this plugin is done in my free time, so it might take a while until resolving an issue.

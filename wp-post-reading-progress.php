@@ -121,6 +121,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enque_front_scripts' );
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\enque_admin_scripts' );
 add_filter( 'the_content', __NAMESPACE__ . '\\maybe_show_content_wp_reading_progress', 20 );
 
+register_deactivation_hook( __FILE__, __NAMESPACE__ . '\\remove_the_database_option' );
+
 // Adding helpers.
 require_once 'helpers.php';
 
@@ -201,4 +203,13 @@ function maybe_show_content_wp_reading_progress( string $content ) : string {
 	return $content;
 }
 
-// @todo: uninstall hook -> delete the option from DB.
+/**
+ * Remove the saved option once the plugin uninstalls.
+ */
+function remove_the_database_option() {
+	$options = get_wp_reading_progress_options();
+
+	if ( isset( $options['delete_db_settings'] ) && 'yes' === $options['delete_db_settings'] ) {
+		delete_option( 'wp-post-reading-progress' );
+	}
+}

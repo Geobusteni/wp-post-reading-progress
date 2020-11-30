@@ -210,6 +210,19 @@ function initiate_settings() {
 			'type'        => 'color',
 		]
 	);
+
+	add_settings_field(
+		'delete_db_settings',
+		esc_html__( 'Delete the settings when plugin is disabled.', 'wp-post-reading-progress' ),
+		__NAMESPACE__ . '\\create_field',
+		'wp_post_reading_progress',
+		'wp-post-reading-progress-section',
+		[
+			'id'          => 'delete_db_settings',
+			'description' => esc_html__( 'The progress bar color for the text in it.', 'wp-post-reading-progress' ),
+			'type'        => 'checkbox',
+		]
+	);
 }
 
 /**

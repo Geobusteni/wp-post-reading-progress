@@ -34,6 +34,7 @@ Options page is found as a sub-menu link in Settings area.
 It can be used as it is, or can be easily modified with CSS from your theme or other plugins.
 It will inherit the fonts and most of the spacing directly for your theme.
 
+Optionally, the settings can be removed from the database, once the plugin uninstalls.
 
 == Changelog ==
 
