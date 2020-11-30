@@ -1,0 +1,33 @@
+.form-table {
+	margin-top: 40px;
+	border-top: 1px solid #ccc;
+	margin-right: 20px;
+	padding-top: 40px;
+	width: calc(100% - 20px);
+
+	& th,
+	& td {
+		padding: 30px 10px;
+	}
+
+	& th {
+		padding-left: 0;
+		font-size: 16px;
+	}
+
+	& td {
+		& input {
+			&[type="number"] {
+				padding-right: 0;
+			}
+
+			&[type="color"] {
+				padding: 0;
+				min-width: 80px;
+				min-height: 30px;
+				border: 0 none;
+				background: transparent;
+			}
+		}
+	}
+}
