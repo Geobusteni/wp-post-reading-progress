@@ -7,7 +7,7 @@
  * Author URI:      https://kul.site
  * Text Domain:     wp-post-reading-progress
  * Domain Path:     /languages
- * Version:         0.1.1
+ * Version:         1.0.0
  *
  * @package         WP Post Reading Progress
  */
