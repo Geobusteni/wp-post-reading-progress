@@ -10,20 +10,6 @@
 		position: fixed;
 	}
 
-	&.nolocation {
-		&.fixed {
-			position: fixed;
-			right: 20px;
-			top: 50%;
-			transform: translateY(-50%);
-			width: auto !important;
-
-			& .reading-time {
-				display: none;
-			}
-		}
-	}
-
 	& label {
 		align-items: center;
 		display: inline-flex;
@@ -60,6 +46,20 @@
 		& span {
 			display: block;
 			font-weight: normal;
+		}
+	}
+
+	&.nolocation {
+		&.fixed {
+			position: fixed;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: auto !important;
+
+			& .reading-time {
+				display: none;
+			}
 		}
 	}
 
