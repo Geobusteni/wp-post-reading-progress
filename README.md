@@ -49,3 +49,10 @@ add_action('admin_init', '\\example_extending_options', 20);
 
  - Use `wp_post_reading_progress_style` filter to add more CSS styles using php (specific for further colour options, for example).
 
+### SVN
+
+Use this command for syncing the plugin git repo with the SVN repo. Asstes are synced separately.
+```
+rsync -rv --exclude-from='/Users/alex/DEKODE/kulsiteplugins/app/public/wp-content/plugins/wp-post-reading-progress/svn-exclude.txt' /Users/alex/DEKODE/kulsiteplugins/app/public/wp-content/plugins/wp-post-reading-progress/ /Users/alex/DEKODE/kulsiteplugins/app/public/svn/trunk
+```
+
