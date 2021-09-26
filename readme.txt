@@ -38,6 +38,9 @@ Optionally, the settings can be removed from the database, once the plugin unins
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix : Fix plugin banner
+
 = 1.0.0 =
 * Add : Initial release
 
